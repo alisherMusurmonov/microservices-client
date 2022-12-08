@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Routes, Route } from "react-router-dom";
+import { routes } from '../router';
 import Main from '../layouts/Main';
-import Users from './Users';
 
 export default function App() {
   return (
     <Main>
       <Routes>
-        <Route path='/users' index element={<Users />} />
-        <Route path="*" element={<h2>404 Page</h2>} />
+        {routes.map(({ element: Element, key, path }) => (
+          <Route
+            key={key}
+            path={path}
+            element={<Element />}
+          />
+        ))}
       </Routes>
     </Main>
   )

@@ -9,3 +9,10 @@ body {
   line-height: 1.5;
   color: #333;
 }
+
+span.english-tag {
+  color: red;
+}
+span.german-tag {
+  color: #14db4b;
+}
